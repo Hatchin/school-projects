@@ -6,7 +6,7 @@ To make use of machine learning techniques and distributed computing principals 
 
 The specific goal we achieved in this project is we successfully predicted number of overal daily trips based on information such as weather and bike station information, with a high accuracy. 
 
-We archieved this by cleaning and imputing data, feature engineering, and modeling building. The algorithms we explored included 
+We archieved this by cleaning and imputing data, feature engineering, and modeling building. The algorithms we explored included:
 * **Linear Regression**
 * **Random Forest**
 * **Gradient Boosting**. 
