@@ -11,8 +11,12 @@ We archieved this by cleaning and imputing data, feature engineering, and modeli
 * **Random Forest**
 * **Gradient Boosting**. 
 
-The complete code for modeling could be [found here](https://github.com/Hatchin/msan697project/blob/master/completeCode.py). 
-
 The tool we use is AWS instances, mongoDB and pyspark, including SparkSQL and Spark Mlib.
+
+The complete code for modeling could be [found here](https://github.com/Hatchin/msan697project/blob/master/completeCode.py).
+The [slides](https://github.com/Hatchin/msan697project/blob/master/Presentation.pdf) introduced other detailed information.
+
+
+**Feel free to explore and contact us for any related question!**
 
 
