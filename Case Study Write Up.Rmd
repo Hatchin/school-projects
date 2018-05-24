@@ -1,0 +1,30 @@
+---
+title: "Case Study"
+authors: "Shikhar Gupta, Qian Li, Sangyu Shen, Jake Toffler, Asmita Vikas"
+date: "12/08/2017"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+library(lawstat)
+library(tseries)
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+We have been given twenty-four years of data, collected monthly, of bankruptcy rates in Canada.  We also have data on the population, unemployment rate, and housing price index in Canada during the same time period, collected at the same interval.  Our goal is to use this data to build a model and then forecast the monthly bankruptcy rate for the subsequent two years.  The ability to forecast bankruptcy rate is a useful tool for national banks, insurance companies, credit-lenders, and more.
+
+When choosing a model for a time series, one of the first questions to ask is whether the data is univariate, i.e. our response variable (in this case bankruptcy rate) is only dependendent on time, or is it multivariate, i.e. there are other variables that influence the response variable.  If the data is univariate, there are two primary approaches: Box-Jenkins and Holt-Winters.  If the data is multivariate, 
+
+Time series can be modeled by a number of different methods and the optimal method can be determined .  broken down into a number of different 
+
+
+
+As with any data analysis, the first step is to look at the data.  	First, let's look at a plot of the bankruptcy rate over time:
+
+```{r}
+
+```
+
+An important concept when testing any model is the use of a validation set.  Building a model that fits past values is important but not as important as building a model that accurately predicts future values.  One of the best ways to check whether or not a model is predictive is to create a validation set.  To do this, we split the data that we have into two partitions: the training set and the validation set.  When building the model, we only use data from the training set.  Once we believe we have built a good model, we see how well the predictions of the model compare to the output in the validation set.  We can then use a metric, such as root-mean-squared error (RMSE), to compare the predictive ability of many models and choose which one is the best.
+
+Since this is a time series problem and because we are trying to predict future values, we split our data into a training set and a validation set based on date.  Further, we tried to have our validation set match the test set as closely as possible.  We know that our model will eventually be tested on the twenty-four months following the end of the data we have been given.  For that reason, we decided to make our validation set the last twenty-four months.  Using the rest of the data as our training set, we built a number of different models using many of the approaches discussed above and compared their predictive ability using RMSE.
