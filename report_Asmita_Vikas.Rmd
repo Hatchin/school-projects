@@ -1,0 +1,202 @@
+---
+title: "TS_case_study"
+author: "Shikhar Gupta"
+date: "11/17/2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+
+library(tseries)
+library(forecast)
+library(corrplot)
+library(ggplot2)
+
+```
+
+Approach <fill number>: VAR(p)
+
+Looking at the plots, it is evident that the bankruptcy rate is dependend on the population index, the unemployment rate and the housing prices at that time. However, it is important to note that not only does the unemployment rate influences the bankruptcy rate, even the bankruptcy rate influences the unemployment rate. This two way relationship needs to be captured in our models. 
+This two way relationship also holds for housing price index, where housing price influences bankcruptcy, and also gets influenced by bankcruptcy.
+The third variable population influences bankruptcy rate, but this relationship is one way.
+
+We go on fitting model for the timeseries of bankruptcy rate, with the endogenous variables unemployment rate and housing price and the exogenous variable population. For each model below, we choose the different subset of variables. For each subset, we need to find out how many lags do we want the model to go back. This is identified by the value p, which makes our model VAR(p). To find the ideal value of p, we iterate through different values of p to find the value that corresponding to the least AIC. Using this value of p, we fit a VAR model.
+
+Model 1: The first model that we fit was using the endogenous variables unemployment rate and house price. The ideal value of p corresponding to the least AIC was found to be 6. Upon training the model on the train set, and forecasting on the validation set, we found the RMSE of 0.0046. The statistically significant variables for the bankcruptcy rate at time t are the bankcruptcy rate at lag t-1, t-3, t-5, t-6.
+
+Model 2: The second model that we fit was using only the house price as the endogenous variable. The ideal value of p corresponding to the least AIC was found to be 6. Upon training the model on the train set, and forecasting on the validation set, we found the RMSE of 0.0051. The statistically significant variables for the bankcruptcy rate at time t are the bankcruptcy rate at lag t-1, t-3, t-5, t-6.
+
+Model 3: The third model that we fit was using only the unemployment rate as the endogenous variable. The ideal value of p corresponding to the least AIC was found to be 6. Upon training the model on the train set, and forecasting on the validation set, we found the RMSE of 0.0055. The statistically significant variables for the bankcruptcy rate at time t are the bankcruptcy rate at lag t-1, t-3, t-5 and the constant term.
+
+Model 4: The fourth model that we fit was using all three variables, where unemployment rate and house price are the endogenous variables, and population is the exogenous variable. The ideal value of p is 5. Upon training the model on  the train set, and forecasting on the validation set, we found the RMSE of 0.0047. However, with the value of p = 6, we get a better RMSE of 0.0045. So we continue with p = 6. The statistically significant variables for the bankcruptcy rate at time t are the bankcruptcy rate at lag t-1, t-2, t-3, t-4, t-5, t-6, house price index at lag t-1, t-6, the constant term and the population.
+
+Model 5: The fifth model that we fit was using unemployment rate as the endogenous variable and population as the exogenous variable. The ideal value of p = 6. Upon training the model on  the train set, and forecasting on the validation set, we found the RMSE of 0.0052. The statistically significant variables for the bankcruptcy rate at time t are the bankcruptcy rate at lag t-1, t-3, t-4, t-5.
+
+Model 6: The sixth model that we fit was using housing price as the endogenous variable and population as the exogenous variable. The ideal value of p = 6. Upon training the model on  the train set, and forecasting on the validation set, we found the RMSE of 0.0047. The statistically significant variables for the bankcruptcy rate at time t are the bankcruptcy rate at lag t-1, t-2, t-3, t-4, t-5, t-6, house price index at lag t-1, t-6, the constant term and the population.
+
+Model 7: For the next approach we subset the training data to 1992 onwards, as we know that the future observations are influenced more by the ones in the near past, than those further away. However, subsetting the training set did not improve the RMSE on the validation set.
+
+The best model we got with VAR(p) so far was the Model 4, using unemployment rate and house price are the endogenous variables, and population is the exogenous variable and p = 6.
+We now train this model over the entire dataset and forecast into the future.
+
+```{r, results="hide"}
+train <- read.csv('/Users/Asmita/Documents/USF/Fall_Mod_2/MSAN604/Project/training.csv')
+train.bankruptcy.ts <- ts(train$Bankruptcy_Rate, frequency = 12, start = c(1987,1))
+
+valid <- read.csv('/Users/Asmita/Documents/USF/Fall_Mod_2/MSAN604/Project/validation.csv')
+valid.bankruptcy.ts <- ts(valid$Bankruptcy_Rate, frequency = 12, start = c(2009,1))
+
+library(vars)
+
+VARselect(y = data.frame(train.bankruptcy.ts, train.unemployment_rate.ts, train.house_price_index.ts))
+# p = 6 for least AIC
+m.var.1 <- VAR(y = data.frame(train.bankruptcy.ts, train.unemployment_rate.ts, train.house_price_index.ts), p = 6)
+summary(m.var.1)
+
+forecast.bankcruptcy.5 <- predict(m.var.1, n.ahead = 24, ci = 0.95)
+
+error.5 <- forecast.bankcruptcy.5$fcst$train.bankruptcy.ts[,1] - valid.bankruptcy.ts
+sqrt(mean(error.5^2))
+
+# model with only endogenous house price
+VARselect(y = data.frame(train.bankruptcy.ts, train.house_price_index.ts))
+# p = 6 for least AIC
+m.var.2 <- VAR(y = data.frame(train.bankruptcy.ts, train.house_price_index.ts), p = 6)
+summary(m.var.2)
+forecast.bankcruptcy.6 <- predict(m.var.2, n.ahead = 24, ci = 0.95)
+
+error.6 <- forecast.bankcruptcy.6$fcst$train.bankruptcy.ts[,1] - valid.bankruptcy.ts
+sqrt(mean(error.6^2)) # 0.005090645
+
+# model with only endogenous unemployment rate
+VARselect(y = data.frame(train.bankruptcy.ts, train.unemployment_rate.ts))
+# p = 6 for least AIC
+m.var.3 <- VAR(y = data.frame(train.bankruptcy.ts, train.unemployment_rate.ts), p = 6)
+summary(m.var.3)
+forecast.bankcruptcy.6 <- predict(m.var.3, n.ahead = 24, ci = 0.95)
+
+error.6 <- forecast.bankcruptcy.6$fcst$train.bankruptcy.ts[,1] - valid.bankruptcy.ts
+sqrt(mean(error.6^2)) # 0.005545157
+
+# model with all three variables
+valid.population.ts <- ts(valid$Population, frequency = 12, start = c(2009,1))
+
+VARselect(y = data.frame(train.bankruptcy.ts, train.unemployment_rate.ts, train.house_price_index.ts), 
+                    exogen = data.frame(train.population.ts))
+# p = 5
+
+m.var.4 <- VAR(y = data.frame(train.bankruptcy.ts, train.unemployment_rate.ts, train.house_price_index.ts), p = 5, exogen = data.frame(pop = train.population.ts))
+
+forecast.bankcruptcy.7 <- predict(m.var.4, dumvar = data.frame(pop = valid.population.ts), 
+                                  n.ahead = 24, ci = 0.95)
+
+error.7 <- forecast.bankcruptcy.7$fcst$train.bankruptcy.ts[,1] - valid.bankruptcy.ts
+sqrt(mean(error.7^2)) # 0.00472089
+
+# p = 6
+m.var.4 <- VAR(y = data.frame(train.bankruptcy.ts, train.unemployment_rate.ts, train.house_price_index.ts), p = 6, exogen = data.frame(pop = train.population.ts))
+summary(m.var.4)
+
+forecast.bankcruptcy.7 <- predict(m.var.4, dumvar = data.frame(pop = valid.population.ts), 
+                                  n.ahead = 24, ci = 0.95)
+
+error.7 <- forecast.bankcruptcy.7$fcst$train.bankruptcy.ts[,1] - valid.bankruptcy.ts
+sqrt(mean(error.7^2)) # 0.004596356
+
+
+
+# model with unemployment_rate and population
+
+VARselect(y = data.frame(train.bankruptcy.ts, train.unemployment_rate.ts), 
+          exogen = data.frame(train.population.ts))
+# p = 6
+
+m.var.5 <- VAR(y = data.frame(train.bankruptcy.ts, train.unemployment_rate.ts), p = 6, exogen = data.frame(pop = train.population.ts))
+summary(m.var.5)
+forecast.bankcruptcy.8 <- predict(m.var.5, dumvar = data.frame(pop = valid.population.ts), 
+                                  n.ahead = 24, ci = 0.95)
+
+error.8 <- forecast.bankcruptcy.8$fcst$train.bankruptcy.ts[,1] - valid.bankruptcy.ts
+sqrt(mean(error.8^2)) # 0.005235535
+
+# model with housing_price and population
+
+VARselect(y = data.frame(train.bankruptcy.ts, train.house_price_index.ts), 
+          exogen = data.frame(train.population.ts))
+# p = 6
+
+m.var.6 <- VAR(y = data.frame(train.bankruptcy.ts, train.house_price_index.ts), p = 6, exogen = data.frame(pop = train.population.ts))
+summary(m.var.6)
+
+forecast.bankcruptcy.9 <- predict(m.var.6, dumvar = data.frame(pop = valid.population.ts), 
+                                  n.ahead = 24, ci = 0.95)
+
+error.9 <- forecast.bankcruptcy.9$fcst$train.bankruptcy.ts[,1] - valid.bankruptcy.ts
+sqrt(mean(error.9^2)) # 0.004776918
+
+
+# subsetting data from 1992 onwards
+train2 <- train[61:nrow(train),]
+train2.bankruptcy.ts <- ts(train2$Bankruptcy_Rate, frequency = 12, start = c(1992,1))
+train2.unemployment_rate.ts <- ts(train2$Unemployment_Rate, frequency = 12, start = c(1992,1))
+train2.population.ts <- ts(train2$Population, frequency = 12, start = c(1992,1))
+train2.house_price_index.ts <- ts(train2$House_Price_Index, frequency = 12, start = c(1992,1))
+
+plot(train2.bankruptcy.ts)
+plot(train2.unemployment_rate.ts)
+plot(train2.population.ts)
+plot(train2.house_price_index.ts)
+
+
+# model with all three variables
+
+VARselect(y = data.frame(train2.bankruptcy.ts, train2.unemployment_rate.ts, train2.house_price_index.ts), 
+          exogen = data.frame(train2.population.ts))
+# p = 5
+
+m.var.7 <- VAR(y = data.frame(train2.bankruptcy.ts, train2.unemployment_rate.ts, 
+                              train2.house_price_index.ts), p = 5, 
+                              exogen = data.frame(pop = train2.population.ts))
+
+forecast.bankcruptcy.10 <- predict(m.var.7, dumvar = data.frame(pop = valid.population.ts), 
+                                  n.ahead = 24, ci = 0.95)
+
+error.10 <- forecast.bankcruptcy.10$fcst$train2.bankruptcy.ts[,1] - valid.bankruptcy.ts
+sqrt(mean(error.10^2)) # 0.00502261
+
+# model with only endogenous unemployment rate and house price
+VARselect(y = data.frame(train2.bankruptcy.ts, train2.unemployment_rate.ts, train2.house_price_index.ts))
+# p = 5 for least AIC
+m.var.8 <- VAR(y = data.frame(train2.bankruptcy.ts, train2.unemployment_rate.ts, 
+                                train2.house_price_index.ts), p = 5)
+
+forecast.bankcruptcy.11 <- predict(m.var.8, n.ahead = 24, ci = 0.95)
+
+error.11 <- forecast.bankcruptcy.11$fcst$train2.bankruptcy.ts[,1] - valid.bankruptcy.ts
+sqrt(mean(error.5^2)) # 0.004656785
+
+
+###########
+final_train <- read.csv('/Users/Asmita/Documents/USF/Fall_Mod_2/MSAN604/Project/train.csv')
+final_train <- na.omit(final_train)
+final_train.bankruptcy.ts <- ts(final_train$Bankruptcy_Rate, frequency = 12, start = c(1987,1))
+final_train.unemployment_rate.ts <- ts(final_train$Unemployment_Rate, frequency = 12, start = c(1987,1))
+final_train.population.ts <- ts(final_train$Population, frequency = 12, start = c(1987,1))
+final_train.house_price_index.ts <- ts(final_train$House_Price_Index, frequency = 12, start = c(1987,1))
+
+m.f <- VAR(y = data.frame(final_train.bankruptcy.ts, final_train.unemployment_rate.ts, final_train.house_price_index.ts), p = 6, exogen = data.frame(pop = final_train.population.ts))
+summary(m.f)
+
+
+final_test <- read.csv('/Users/Asmita/Documents/USF/Fall_Mod_2/MSAN604/Project/test.csv')
+test.population.ts <- ts(final_test$Population, frequency = 12, start = c(2011,1))
+
+
+forecast.bankcruptcy <- predict(m.f, dumvar = data.frame(pop = test.population.ts), 
+                                  n.ahead = 24, ci = 0.95)
+
+plot(forecast.bankcruptcy)
+
+```
