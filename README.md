@@ -1,3 +1,5 @@
+# SF Bay Area Bike Share Project
+
 This is final project for master course msan697, taught by Diane Woodbridge, phd. 
 
 We worked on data from Kaggle research [SF Bay Area Bike Share](https://www.kaggle.com/benhamner/sf-bay-area-bike-share). 
@@ -11,10 +13,13 @@ We archieved this by cleaning and imputing data, feature engineering, and modeli
 * **Random Forest**
 * **Gradient Boosting**. 
 
-The tool we use is AWS instances, mongoDB and pyspark, including SparkSQL and Spark Mlib.
+The tool we use is **AWS instances**, **mongoDB** and **pyspark**, including **SparkSQL** and **Spark Mlib**.
+
+## Code and Slides
 
 The complete code for modeling could be [found here](https://github.com/Hatchin/msan697project/blob/master/completeCode.py).
-The [slides](https://github.com/Hatchin/msan697project/blob/master/Presentation.pdf) introduced other detailed information.
+
+And this [slides](https://github.com/Hatchin/msan697project/blob/master/Presentation.pdf) introduced other detailed information.
 
 
 **Feel free to explore and contact us for any related question!**
