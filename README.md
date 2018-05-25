@@ -1,8 +1,10 @@
-# Twitter Sentiment Project
+# Twitter Sentiment Analysis
 
-In this project, I fetched Twitter data using Twitter API and tweepy, then performed sentiment analysis using vaderSentiment library. After that, I produced a web server running on AWS displaying given user's recent tweet list color-coded by sentiment. I also created a page displays the list of users followed by a given user.
+In this project, I fetched Twitter data using Twitter API and tweepy, then performed sentiment analysis of each tweet using vaderSentiment library.
 
-The final product looks like this:
+I aslo produced a web server running on AWS displaying given user's recent tweet list color-coded by sentiment. A web page was created to display the list of users followed by a given user.
+
+Following is an example of my final product:
 <p>
 <img src="/trump-tweets.png">
 </p>
