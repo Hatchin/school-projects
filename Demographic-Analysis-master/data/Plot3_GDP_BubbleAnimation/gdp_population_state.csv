@@ -1,0 +1,256 @@
+State,Population,Year,Region,GDP
+Alabama,4.71,2009,South,0.86
+Alabama,4.79,2010,South,0.89
+Alabama,4.8,2011,South,0.93
+Alabama,4.82,2012,South,0.96
+Alabama,4.83,2013,South,0.99
+Alaska,0.7,2009,West,0.26
+Alaska,0.71,2010,West,0.29
+Alaska,0.72,2011,West,0.31
+Alaska,0.73,2012,West,0.32
+Alaska,0.74,2013,West,0.32
+Arizona,6.6,2009,West,1.26
+Arizona,6.41,2010,West,1.28
+Arizona,6.48,2011,West,1.33
+Arizona,6.55,2012,West,1.39
+Arizona,6.63,2013,West,1.42
+Arkansas,2.89,2009,South,0.51
+Arkansas,2.92,2010,South,0.54
+Arkansas,2.94,2011,South,0.56
+Arkansas,2.95,2012,South,0.57
+Arkansas,2.96,2013,South,0.6
+California,36.96,2009,West,10.06
+California,37.35,2010,West,10.34
+California,37.69,2011,West,10.73
+California,38.04,2012,West,11.26
+California,38.33,2013,West,11.75
+Colorado,5.02,2009,West,1.29
+Colorado,5.05,2010,West,1.33
+Colorado,5.12,2011,West,1.38
+Colorado,5.19,2012,West,1.44
+Colorado,5.27,2013,West,1.51
+Connecticut,3.52,2009,Northeast,1.26
+Connecticut,3.58,2010,Northeast,1.26
+Connecticut,3.58,2011,Northeast,1.26
+Connecticut,3.59,2012,Northeast,1.29
+Connecticut,3.6,2013,Northeast,1.29
+Delaware,0.89,2009,South,0.31
+Delaware,0.9,2010,South,0.31
+Delaware,0.91,2011,South,0.33
+Delaware,0.92,2012,South,0.33
+Delaware,0.93,2013,South,0.33
+District of Columbia,0.6,2009,South,0.46
+District of Columbia,0.6,2010,South,0.48
+District of Columbia,0.62,2011,South,0.5
+District of Columbia,0.63,2012,South,0.51
+District of Columbia,0.65,2013,South,0.52
+Florida,18.54,2009,South,3.76
+Florida,18.84,2010,South,3.83
+Florida,19.06,2011,South,3.87
+Florida,19.32,2012,South,4.0
+Florida,19.55,2013,South,4.17
+Georgia,9.83,2009,South,2.1
+Georgia,9.71,2010,South,2.14
+Georgia,9.82,2011,South,2.21
+Georgia,9.92,2012,South,2.3
+Georgia,9.99,2013,South,2.38
+Hawaii,1.3,2009,West,0.33
+Hawaii,1.36,2010,West,0.34
+Hawaii,1.37,2011,West,0.35
+Hawaii,1.39,2012,West,0.36
+Hawaii,1.4,2013,West,0.37
+Idaho,1.55,2009,West,0.28
+Idaho,1.57,2010,West,0.29
+Idaho,1.58,2011,West,0.3
+Idaho,1.6,2012,West,0.3
+Idaho,1.61,2013,West,0.32
+Illinois,12.91,2009,Midwest,3.4
+Illinois,12.84,2010,Midwest,3.48
+Illinois,12.87,2011,Midwest,3.64
+Illinois,12.88,2012,Midwest,3.82
+Illinois,12.88,2013,Midwest,3.87
+Indiana,6.42,2009,Midwest,1.41
+Indiana,6.49,2010,Midwest,1.53
+Indiana,6.52,2011,Midwest,1.58
+Indiana,6.54,2012,Midwest,1.62
+Indiana,6.57,2013,Midwest,1.69
+Iowa,3.01,2009,Midwest,0.73
+Iowa,3.05,2010,Midwest,0.75
+Iowa,3.06,2011,Midwest,0.8
+Iowa,3.07,2012,Midwest,0.85
+Iowa,3.09,2013,Midwest,0.87
+Kansas,2.82,2009,Midwest,0.64
+Kansas,2.86,2010,Midwest,0.67
+Kansas,2.87,2011,Midwest,0.72
+Kansas,2.89,2012,Midwest,0.74
+Kansas,2.89,2013,Midwest,0.75
+Kentucky,4.31,2009,South,0.81
+Kentucky,4.35,2010,South,0.86
+Kentucky,4.37,2011,South,0.9
+Kentucky,4.38,2012,South,0.93
+Kentucky,4.4,2013,South,0.95
+Louisiana,4.49,2009,South,1.12
+Louisiana,4.54,2010,South,1.24
+Louisiana,4.57,2011,South,1.27
+Louisiana,4.6,2012,South,1.3
+Louisiana,4.63,2013,South,1.26
+Maine,1.32,2009,Northeast,0.26
+Maine,1.33,2010,Northeast,0.27
+Maine,1.33,2011,Northeast,0.27
+Maine,1.33,2012,Northeast,0.28
+Maine,1.33,2013,Northeast,0.28
+Maryland,5.7,2009,South,1.52
+Maryland,5.79,2010,South,1.58
+Maryland,5.83,2011,South,1.64
+Maryland,5.88,2012,South,1.68
+Maryland,5.93,2013,South,1.71
+Massachusetts,6.59,2009,Northeast,2.05
+Massachusetts,6.56,2010,Northeast,2.15
+Massachusetts,6.59,2011,Northeast,2.22
+Massachusetts,6.65,2012,Northeast,2.32
+Massachusetts,6.69,2013,Northeast,2.36
+Michigan,9.97,2009,Midwest,1.91
+Michigan,9.88,2010,Midwest,2.04
+Michigan,9.88,2011,Midwest,2.12
+Michigan,9.88,2012,Midwest,2.22
+Michigan,9.9,2013,Midwest,2.29
+Minnesota,5.27,2009,Midwest,1.37
+Minnesota,5.31,2010,Midwest,1.44
+Minnesota,5.34,2011,Midwest,1.51
+Minnesota,5.38,2012,Midwest,1.57
+Minnesota,5.42,2013,Midwest,1.63
+Mississippi,2.95,2009,South,0.48
+Mississippi,2.97,2010,South,0.49
+Mississippi,2.98,2011,South,0.5
+Mississippi,2.98,2012,South,0.52
+Mississippi,2.99,2013,South,0.53
+Missouri,5.99,2009,Midwest,1.31
+Missouri,6.0,2010,Midwest,1.35
+Missouri,6.01,2011,Midwest,1.35
+Missouri,6.02,2012,Midwest,1.4
+Missouri,6.04,2013,Midwest,1.46
+Montana,0.97,2009,West,0.19
+Montana,0.99,2010,West,0.2
+Montana,1.0,2011,West,0.21
+Montana,1.01,2012,West,0.22
+Montana,1.02,2013,West,0.23
+Nebraska,1.8,2009,Midwest,0.46
+Nebraska,1.83,2010,Midwest,0.49
+Nebraska,1.84,2011,Midwest,0.53
+Nebraska,1.86,2012,Midwest,0.54
+Nebraska,1.87,2013,Midwest,0.57
+Nevada,2.64,2009,West,0.63
+Nevada,2.7,2010,West,0.64
+Nevada,2.72,2011,West,0.66
+Nevada,2.76,2012,West,0.67
+Nevada,2.79,2013,West,0.69
+New Hampshire,1.32,2009,Northeast,0.33
+New Hampshire,1.32,2010,Northeast,0.34
+New Hampshire,1.32,2011,Northeast,0.34
+New Hampshire,1.32,2012,Northeast,0.35
+New Hampshire,1.32,2013,Northeast,0.36
+New Jersey,8.71,2009,Northeast,2.55
+New Jersey,8.8,2010,Northeast,2.59
+New Jersey,8.82,2011,Northeast,2.62
+New Jersey,8.86,2012,Northeast,2.74
+New Jersey,8.9,2013,Northeast,2.82
+New Mexico,2.01,2009,West,0.41
+New Mexico,2.07,2010,West,0.43
+New Mexico,2.08,2011,West,0.45
+New Mexico,2.09,2012,West,0.45
+New Mexico,2.09,2013,West,0.46
+New York,19.54,2009,Northeast,6.08
+New York,19.39,2010,Northeast,6.39
+New York,19.47,2011,Northeast,6.53
+New York,19.57,2012,Northeast,6.93
+New York,19.65,2013,Northeast,7.07
+North Carolina,9.38,2009,South,2.14
+North Carolina,9.56,2010,South,2.18
+North Carolina,9.66,2011,South,2.25
+North Carolina,9.75,2012,South,2.31
+North Carolina,9.85,2013,South,2.4
+North Dakota,0.65,2009,Midwest,0.17
+North Dakota,0.67,2010,Midwest,0.19
+North Dakota,0.68,2011,Midwest,0.22
+North Dakota,0.7,2012,Midwest,0.28
+North Dakota,0.72,2013,Midwest,0.29
+Ohio,11.54,2009,Midwest,2.54
+Ohio,11.54,2010,Midwest,2.64
+Ohio,11.54,2011,Midwest,2.81
+Ohio,11.54,2012,Midwest,2.92
+Ohio,11.57,2013,Midwest,3.0
+Oklahoma,3.69,2009,South,0.74
+Oklahoma,3.76,2010,South,0.77
+Oklahoma,3.79,2011,South,0.85
+Oklahoma,3.81,2012,South,0.91
+Oklahoma,3.85,2013,South,0.98
+Oregon,3.83,2009,West,0.97
+Oregon,3.84,2010,West,1.03
+Oregon,3.87,2011,West,1.08
+Oregon,3.9,2012,West,1.06
+Oregon,3.93,2013,West,1.05
+Pennsylvania,12.6,2009,Northeast,3.04
+Pennsylvania,12.71,2010,Northeast,3.16
+Pennsylvania,12.74,2011,Northeast,3.27
+Pennsylvania,12.76,2012,Northeast,3.39
+Pennsylvania,12.77,2013,Northeast,3.51
+Rhode Island,1.05,2009,Northeast,0.25
+Rhode Island,1.05,2010,Northeast,0.26
+Rhode Island,1.05,2011,Northeast,0.26
+Rhode Island,1.05,2012,Northeast,0.27
+Rhode Island,1.05,2013,Northeast,0.27
+South Carolina,4.56,2009,South,0.82
+South Carolina,4.64,2010,South,0.85
+South Carolina,4.68,2011,South,0.88
+South Carolina,4.72,2012,South,0.9
+South Carolina,4.77,2013,South,0.94
+South Dakota,0.81,2009,Midwest,0.19
+South Dakota,0.82,2010,Midwest,0.2
+South Dakota,0.82,2011,Midwest,0.23
+South Dakota,0.83,2012,Midwest,0.23
+South Dakota,0.84,2013,Midwest,0.24
+Tennessee,6.3,2009,South,1.3
+Tennessee,6.36,2010,South,1.34
+Tennessee,6.4,2011,South,1.39
+Tennessee,6.46,2012,South,1.47
+Tennessee,6.5,2013,South,1.53
+Texas,24.78,2009,South,6.17
+Texas,25.26,2010,South,6.6
+Texas,25.67,2011,South,7.19
+Texas,26.06,2012,South,7.69
+Texas,26.45,2013,South,8.25
+Utah,2.78,2009,West,0.59
+Utah,2.78,2010,West,0.61
+Utah,2.82,2011,West,0.65
+Utah,2.86,2012,West,0.67
+Utah,2.9,2013,West,0.7
+Vermont,0.62,2009,Northeast,0.13
+Vermont,0.63,2010,Northeast,0.14
+Vermont,0.63,2011,Northeast,0.14
+Vermont,0.63,2012,Northeast,0.15
+Vermont,0.63,2013,Northeast,0.15
+Virginia,7.88,2009,South,2.08
+Virginia,8.02,2010,South,2.15
+Virginia,8.1,2011,South,2.19
+Virginia,8.19,2012,South,2.26
+Virginia,8.26,2013,South,2.3
+Washington,6.66,2009,West,1.81
+Washington,6.74,2010,West,1.87
+Washington,6.83,2011,West,1.93
+Washington,6.9,2012,West,2.02
+Washington,6.97,2013,West,2.11
+West Virginia,1.82,2009,South,0.33
+West Virginia,1.85,2010,South,0.35
+West Virginia,1.86,2011,South,0.37
+West Virginia,1.86,2012,South,0.37
+West Virginia,1.85,2013,South,0.38
+Wisconsin,5.65,2009,Midwest,1.3
+Wisconsin,5.69,2010,Midwest,1.34
+Wisconsin,5.71,2011,Midwest,1.4
+Wisconsin,5.73,2012,Midwest,1.45
+Wisconsin,5.74,2013,Midwest,1.5
+Wyoming,0.54,2009,West,0.2
+Wyoming,0.56,2010,West,0.21
+Wyoming,0.57,2011,West,0.22
+Wyoming,0.58,2012,West,0.21
+Wyoming,0.58,2013,West,0.22
