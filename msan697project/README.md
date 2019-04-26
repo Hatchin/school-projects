@@ -17,9 +17,9 @@ The tool we use is **AWS instances**, **mongoDB** and **pyspark**, including **S
 
 ## Code and Slides
 
-The complete code for modeling could be [found here](https://github.com/Hatchin/msan697project/blob/master/completeCode.py).
+The complete code for modeling could be [found here](https://github.com/Hatchin/young-projects/blob/master/msan697project/completeCode.py).
 
-And this [slides](https://github.com/Hatchin/msan697project/blob/master/Presentation.pdf) introduced other detailed information.
+And this [slides](https://github.com/Hatchin/young-projects/blob/master/msan697project/Presentation.pdf) introduced other detailed information.
 
 
 **Feel free to explore and contact us for any related question!**
