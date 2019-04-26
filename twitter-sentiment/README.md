@@ -8,9 +8,9 @@ I aslo produced a web server running on AWS displaying given user's recent tweet
 --------------------
 Following is an example of my final product:
 <p>
-<img src="/trump-tweets.png">
+<img src="trump-tweets.png">
 </p>
 
 <p>
-<img src="/trump-follows.png" width="400">
+<img src="trump-follows.png" width="400">
 </p>
