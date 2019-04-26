@@ -9,4 +9,4 @@ Tool: R, ggplot2
 Models explored: time series, sarimax, var, holt-winters
 
 ## Report
-[Report](https://github.com/Hatchin/Canadian-Bankruptcy/blob/master/Bankruptcy.pdf) could be found here. 
+[Report](https://github.com/Hatchin/young-projects/blob/master/Canadian-Bankruptcy/Bankruptcy.pdf) could be found here. 
