@@ -12,4 +12,4 @@ In order to do so, the following process was performed:
 ----------------------------------
 ### Code and notebook
 
-This notebook of this project could be found [here](https://github.com/Hatchin/eigenfaces-project/blob/master/Image-Sangyu-Shen.ipynb).
+This notebook of this project could be found [here](https://github.com/Hatchin/young-projects/blob/master/eigenfaces-project/Image-Sangyu-Shen.ipynb).
