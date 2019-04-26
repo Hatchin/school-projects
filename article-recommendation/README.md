@@ -7,7 +7,7 @@ The project involves reading in a database of word vectors and a corpus of text 
 
 
 <p>
-<img src="/article1.png" width="600">
+<img src="article1.png" width="600">
 </p>
 
 
